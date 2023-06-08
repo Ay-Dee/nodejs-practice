@@ -9,3 +9,4 @@ console.log(store.counter(['shawn', 'Daniel', 'Bob']));
 // store.writeMe('say.pdf', 'bill.txt')
 
 // store.delFile('bill.txt');
+

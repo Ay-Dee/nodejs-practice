@@ -14,7 +14,7 @@ var readMe = function(file){
 
 var writeMe = function(file, source){
     fs.readFile(source, 'utf8', function(err, data){
-        return `${fs.writeFileSync(file, data)}`;
+        fs.writeFile(file, data)
     }); 
 };
 
@@ -30,6 +30,12 @@ var makeDir = function(dir){
     })
 };
 
+var removeDir = function (dir) {
+    fs.rmdir(dir, function (err, data) {
+        return data;
+    })
+};
+
 module.exports = {
     adder: adder,
     counter: counter,
@@ -37,5 +43,6 @@ module.exports = {
     writeMe: writeMe,
     delFile: delFile,
     makeDir: makeDir,
+    removeDir: removeDir,
 }
 
